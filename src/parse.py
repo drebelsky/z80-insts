@@ -101,6 +101,7 @@ def main(args):
         lines = iter(inst)
         page, inst = next(lines)
         page = int(re.search(r"\d+", page).group()) # type: ignore
+        inst = inst.replace(", ", ",")
         if page == 277:
             # there's an image on this page, so we just hardcode the instruction
             insts.append({
