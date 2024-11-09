@@ -138,6 +138,8 @@ def main(args):
         if page == 310:
             # The heading is missing a comma
             inst = "IN r,(C)"
+        elif page == 273 and inst.endswith("rn"):
+            inst = "RES b,r"
 
         encoding = []
         for line in lines:
