@@ -1,5 +1,6 @@
 insts.json: insts.txt parse.py
 	python3 parse.py insts.txt > insts.json
+	cp insts.json ..
 
 insts.txt: extract.py um0080.pdf
 	python3 extract.py > insts.txt
