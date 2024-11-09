@@ -134,6 +134,11 @@ def main(args):
             ops = [op.strip().replace("lY", "IY") for op in next(lines).split(",")]
             if len(ops) == 1 and ops[0] in {"None", "None."}:
                 ops = []
+
+        if page == 310:
+            # The heading is missing a comma
+            inst = "IN r,(C)"
+
         encoding = []
         for line in lines:
             if len(line) > 8:
