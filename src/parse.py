@@ -125,7 +125,7 @@ def main(args):
             continue
         
         if page == 252 or page == 254:
-            # These instructions take no operands, but on like elsewhere, the manual leaves these pages blank, instead
+            # These instructions take no operands, but unlike elsewhere, the manual leaves these pages blank, instead
             # of using "None" 
             ops = []
         else:
