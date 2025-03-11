@@ -111,6 +111,7 @@ def main(args):
                 "operands": ["b", "(HL)"],
                 "encoding": [["11001011"], ["11", "b", "110"]]
             })
+            continue
         elif page == 269:
             insts.append({
                 "page": page,
@@ -119,6 +120,7 @@ def main(args):
                 "operands": ["b", "(IX+d)"],
                 "encoding": [["11011101"], ["11001011"], ["d"], ["11", "b", "110"]]
             })
+            continue
         elif page == 277:
             insts.append({
                 "page": page,
