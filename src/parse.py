@@ -102,8 +102,24 @@ def main(args):
         page, inst = next(lines)
         page = int(re.search(r"\d+", page).group()) # type: ignore
         inst = inst.replace(", ", ",").replace("′", "'")
-        if page == 277:
-            # there's an image on this page, so we just hardcode the instruction
+        # there's an image on 267, 269, and 277, so we hardcode the instructions instead
+        if page == 267:
+            insts.append({
+                "page": page,
+                "inst": inst,
+                "op_code": inst.split()[0],
+                "operands": ["b", "(HL)"],
+                "encoding": [["11001011"], ["11", "b", "110"]]
+            })
+        elif page == 269:
+            insts.append({
+                "page": page,
+                "inst": inst,
+                "op_code": inst.split()[0],
+                "operands": ["b", "(IX+d)"],
+                "encoding": [["11011101"], ["11001011"], ["d"], ["11", "b", "110"]]
+            })
+        elif page == 277:
             insts.append({
                 "page": page,
                 "inst": inst,
